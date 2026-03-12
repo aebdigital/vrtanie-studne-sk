@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import SeoSchema from "@/components/SeoSchema";
+import { seo, toMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Cenník",
-  description:
-    "Cenník vŕtania studní - od 65EUR za 1 bm. Doprava, vŕtacie práce, inštalácia rúr a zásyp v cene. Poseidon works s.r.o.",
-};
+export const metadata: Metadata = toMetadata(seo.cennik);
 
 const includedItems = [
   {
@@ -106,9 +104,30 @@ const additionalItems = [
   },
 ];
 
+const cennikHighlights = [
+  "external-new/vrtanie-studni06.jpg",
+  "external-new/vrtanie-studni03.jpg",
+  "external-new/vrtanie-studni10.jpg",
+];
+
+const cennikPriceGallery = [
+  "external-new/vrtanie-studni01.jpg",
+  "external-new/vrtanie-studni11.jpg",
+  "external-new/vrtanie-studni05.jpg",
+  "external-new/vrtanie-studni12.jpg",
+];
+
+const cennikTurnkeyGallery = [
+  "external-new/vrtanie-studni04.jpg",
+  "external-new/vrtanie-studni07.jpg",
+  "external-new/vrtanie-studni06.jpg",
+];
+
 export default function CennikPage() {
   return (
     <>
+      <SeoSchema schema={seo.cennik.schema} />
+
       {/* Hero */}
       <section className="relative bg-dark py-20">
         <div className="absolute inset-0 opacity-20">
@@ -181,12 +200,42 @@ export default function CennikPage() {
               </div>
             ))}
           </div>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {cennikHighlights.map((img, index) => (
+              <div
+                key={img}
+                className="relative h-48 rounded-xl overflow-hidden shadow-sm"
+              >
+                <Image
+                  src={`/images/${img}`}
+                  alt={`Vŕtanie studní - cenník ukážka ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Price + Included Items */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-[90%] mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+            {cennikPriceGallery.map((img, index) => (
+              <div
+                key={img}
+                className="relative h-36 sm:h-44 rounded-xl overflow-hidden"
+              >
+                <Image
+                  src={`/images/${img}`}
+                  alt={`Vŕtanie studní - cena ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Price - Left */}
             <div className="text-center lg:text-left">
@@ -206,6 +255,21 @@ export default function CennikPage() {
                 faktorov, z ktorých je geologické podložie pozemku tým
                 najdôležitejším. Pre presnú cenovú ponuku nás kontaktujte.
               </p>
+              <div className="mt-8 grid grid-cols-2 gap-3">
+                {cennikPriceGallery.slice(0, 4).map((img, index) => (
+                  <div
+                    key={`detail-${img}`}
+                    className="relative h-28 sm:h-32 rounded-lg overflow-hidden"
+                  >
+                    <Image
+                      src={`/images/${img}`}
+                      alt={`Vŕtanie studní - detail cenník ${index + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Included Items - Right, stacked */}
@@ -261,6 +325,21 @@ export default function CennikPage() {
               Pre kompletnú studňu na kľúč je potrebné pripočítať nasledujúce
               položky, ktoré sú individuálne podľa potrieb zákazníka.
             </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+            {cennikTurnkeyGallery.map((img, index) => (
+              <div
+                key={img}
+                className="relative h-44 rounded-xl overflow-hidden border border-white/10"
+              >
+                <Image
+                  src={`/images/${img}`}
+                  alt={`Vŕtanie studní - studňa na kľúč ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {additionalItems.map((item, index) => (

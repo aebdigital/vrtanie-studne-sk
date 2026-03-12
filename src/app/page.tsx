@@ -1,6 +1,11 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ParallaxHero from "@/components/ParallaxHero";
+import SeoSchema from "@/components/SeoSchema";
+import { seo, toMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = toMetadata(seo.home);
 
 const benefits = [
   {
@@ -160,12 +165,15 @@ const processSteps = [
 ];
 
 const galleryPreview = [
+  "external-new/vrtanie-studni11.jpg",
+  "vrtanie_studni16.jpg",
+  "external-new/vrtanie-studni05.jpg",
+  "vrtanie_studni14.jpg",
+  "external-new/vrtanie-studni01.jpg",
   "vrtanie_studni07.jpg",
+  "vrtanie_studni25.jpg",
   "vrtanie_studni08.jpg",
   "vrtanie_studni18.jpg",
-  "vrtanie_studni14.jpg",
-  "vrtanie_studni25.jpg",
-  "vrtanie_studni16.jpg",
 ];
 
 const serviceAreas = [
@@ -184,45 +192,78 @@ const serviceAreas = [
 export default function Home() {
   return (
     <>
+      <SeoSchema schema={seo.home.schema} />
+
       {/* Hero Section */}
       <ParallaxHero
-        imageSrc="/images/vrtanie_studni01.jpg"
+        imageSrc="/images/external-new/vrtanie-studni01.jpg"
         imageAlt="Vŕtanie studní"
       >
-        <div className="relative z-10 max-w-[90%] mx-auto px-4 py-20">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
-              Profesionálne vŕtanie studní
-            </h1>
-            <p className="text-2xl md:text-3xl text-teal-light font-semibold mb-4">
-              Banská Bystrica, Zvolen, Brezno a celé stredné Slovensko
-            </p>
-            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Dlhoročné skúsenosti, moderná technika a fér ceny. Zabezpečíme vám
-              vlastný zdroj čistej podzemnej vody. Garancia nájdenia vody,
-              bezplatné poradenstvo a doprava zdarma.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/kontakt"
-                className="inline-flex items-center justify-center bg-teal hover:bg-teal-dark text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
-              >
-                Nezáväzná ponuka
-              </Link>
-              <a
-                href="tel:+421907872591"
-                className="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg border border-white/30"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 mr-2"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+        <div className="relative z-10 max-w-[90%] mx-auto px-4 py-14 sm:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.85fr)] gap-8 lg:gap-10 items-end">
+            <div className="text-center lg:text-left">
+              <p className="eyebrow inline-flex rounded-full border border-white/35 bg-white/10 px-4 py-2 text-xs text-white/90 mb-5">
+                MQM stavebno obchodná spoločnosť s.r.o.
+              </p>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-5 leading-[1.03]">
+                Profesionálne vŕtanie studní
+              </h1>
+              <p className="text-base sm:text-xl md:text-2xl text-teal-light font-semibold mb-5 uppercase tracking-[0.09em]">
+                Banská Bystrica, Zvolen, Brezno a celé stredné Slovensko
+              </p>
+              <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-7 max-w-3xl mx-auto lg:mx-0">
+                Dlhoročné skúsenosti, moderná technika a fér ceny. Zabezpečíme
+                vám vlastný zdroj čistej podzemnej vody. Garancia nájdenia
+                vody, bezplatné poradenstvo a doprava zdarma.
+              </p>
+
+              <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-7">
+                <a
+                  href="tel:+421907872591"
+                  className="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-4 py-2 text-sm sm:text-base font-semibold text-white hover:bg-white/20"
                 >
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                </svg>
-                0907 872 591
-              </a>
+                  0907 872 591
+                </a>
+                <a
+                  href="mailto:info@vrtanie-studne.sk"
+                  className="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-4 py-2 text-sm sm:text-base font-semibold text-white hover:bg-white/20"
+                >
+                  info@vrtanie-studne.sk
+                </a>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                <Link
+                  href="/kontakt"
+                  className="inline-flex items-center justify-center bg-teal hover:bg-teal-dark text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
+                >
+                  Nezáväzná ponuka
+                </Link>
+                <a
+                  href="tel:+421902681203"
+                  className="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg border border-white/30"
+                >
+                  0902 681 203
+                </a>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-white/25 bg-[linear-gradient(150deg,rgba(6,31,48,0.82),rgba(11,47,68,0.72))] p-5 sm:p-6 shadow-[0_28px_52px_-28px_rgba(0,0,0,0.85)] backdrop-blur-sm">
+              <p className="eyebrow text-teal-light text-xs mb-3">Rýchly kontakt</p>
+              <h2 className="text-2xl sm:text-3xl text-white mb-4 leading-tight">
+                Dohodnime termín obhliadky
+              </h2>
+              <div className="space-y-2 text-white">
+                <a
+                  href="tel:+421902681203"
+                  className="block rounded-lg border border-white/20 bg-white/10 px-4 py-2 font-semibold hover:bg-white/20"
+                >
+                  0902 681 203
+                </a>
+              </div>
+              <p className="mt-4 text-sm text-gray-200">
+                Dostupní po celom strednom Slovensku. Odpovedáme rýchlo.
+              </p>
             </div>
           </div>
         </div>
@@ -248,6 +289,25 @@ export default function Home() {
               <p className="text-lg text-gray-600 leading-relaxed">
                 Našim cieľom je vykonávať prácu na vysoko profesionálnej úrovni, ktorá je šetrná voči životnému prostrediu, pričom kvalita našej práce a vaša spokojnosť sú vždy na prvom mieste.
               </p>
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  "external-new/vrtanie-studni12.jpg",
+                  "external-new/vrtanie-studni03.jpg",
+                  "external-new/vrtanie-studni06.jpg",
+                ].map((img, index) => (
+                  <div
+                    key={index}
+                    className="relative h-40 rounded-xl overflow-hidden shadow-sm"
+                  >
+                    <Image
+                      src={`/images/${img}`}
+                      alt={`Vŕtanie studní - detail realizácie ${index + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="space-y-4">
               <div className="bg-white rounded-xl p-6 shadow-sm">
@@ -278,6 +338,25 @@ export default function Home() {
               Vlastná vŕtaná studňa prináša mnoho výhod pre vašu domácnosť aj
               podnikanie.
             </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+            {[
+              "external-new/vrtanie-studni07.jpg",
+              "external-new/vrtanie-studni01.jpg",
+              "external-new/vrtanie-studni04.jpg",
+            ].map((img, index) => (
+              <div
+                key={index}
+                className="relative h-44 rounded-xl overflow-hidden shadow-sm"
+              >
+                <Image
+                  src={`/images/${img}`}
+                  alt={`Vŕtanie studní - ukážka ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
@@ -310,6 +389,25 @@ export default function Home() {
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               Investícia do vlastnej vŕtanej studne sa vám mnohokrát vráti.
             </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+            {[
+              "external-new/vrtanie-studni10.jpg",
+              "external-new/vrtanie-studni04.jpg",
+              "external-new/vrtanie-studni07.jpg",
+            ].map((img, index) => (
+              <div
+                key={index}
+                className="relative h-44 rounded-xl overflow-hidden border border-white/10"
+              >
+                <Image
+                  src={`/images/${img}`}
+                  alt={`Vŕtanie studní - referencia ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {advantages.map((adv, index) => (
@@ -350,8 +448,8 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl">
               <Image
-                src="/images/vrtanie_studni04.jpg"
-                alt="Vŕtacia súprava Hutte HBR"
+                src="/images/external-new/vrtanie-studni01.jpg"
+                alt="Vŕtanie studní - technické parametre"
                 fill
                 className="object-cover"
               />
@@ -415,6 +513,25 @@ export default function Home() {
               Od prieskumu až po odovzdanie hotovej studne - kompletný servis na
               jednom mieste.
             </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+            {[
+              "external-new/vrtanie-studni11.jpg",
+              "external-new/vrtanie-studni12.jpg",
+              "external-new/vrtanie-studni10.jpg",
+            ].map((img, index) => (
+              <div
+                key={index}
+                className="relative h-44 rounded-xl overflow-hidden shadow-sm"
+              >
+                <Image
+                  src={`/images/${img}`}
+                  alt={`Vŕtanie studní - postup ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((step, index) => (
@@ -483,7 +600,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-10">
             <Link
-              href="/galeria"
+              href="/fotogaleria"
               className="inline-flex items-center gap-2 bg-teal hover:bg-teal-dark text-white font-semibold px-8 py-4 rounded-lg transition-colors"
             >
               Zobraziť celú galériu
@@ -515,6 +632,24 @@ export default function Home() {
               Poskytujeme služby vŕtania studní v širokej oblasti stredného
               Slovenska.
             </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            {[
+              "external-new/vrtanie-studni06.jpg",
+              "external-new/vrtanie-studni03.jpg",
+            ].map((img, index) => (
+              <div
+                key={index}
+                className="relative h-52 rounded-xl overflow-hidden shadow-sm"
+              >
+                <Image
+                  src={`/images/${img}`}
+                  alt={`Vŕtanie studní - oblasť pôsobnosti ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {serviceAreas.map((area, index) => (

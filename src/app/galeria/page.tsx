@@ -26,6 +26,15 @@ const images = [
   "vrtanie_studni23.jpg",
   "vrtanie_studni24.jpg",
   "vrtanie_studni25.jpg",
+  "external-new/vrtanie-studni01.jpg",
+  "external-new/vrtanie-studni03.jpg",
+  "external-new/vrtanie-studni04.jpg",
+  "external-new/vrtanie-studni05.jpg",
+  "external-new/vrtanie-studni06.jpg",
+  "external-new/vrtanie-studni07.jpg",
+  "external-new/vrtanie-studni10.jpg",
+  "external-new/vrtanie-studni11.jpg",
+  "external-new/vrtanie-studni12.jpg",
 ];
 
 export default function GaleriaPage() {
@@ -209,7 +218,7 @@ export default function GaleriaPage() {
           {/* Image */}
           <div
             key={lightboxIndex}
-            className="relative w-full h-full max-w-5xl max-h-[85vh] mx-16 my-8 animate-lightbox-zoom-in"
+            className="relative w-full h-full max-w-5xl max-h-[85vh] mx-4 sm:mx-16 my-8 animate-lightbox-zoom-in"
             onClick={(e) => e.stopPropagation()}
           >
             <Image

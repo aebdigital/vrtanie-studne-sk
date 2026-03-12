@@ -3,7 +3,7 @@ import { seo, toMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = toMetadata(seo.fotogaleria);
 
-export default function GaleriaLayout({
+export default function FotogaleriaLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -19,3 +19,4 @@ export default function GaleriaLayout({
     </>
   );
 }
+

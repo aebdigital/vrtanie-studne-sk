@@ -63,7 +63,9 @@ export default function KontaktPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Spoločnosť</h3>
-                    <p className="text-gray-600">Poseidon works s.r.o.</p>
+                    <p className="text-gray-600">
+                      MQM stavebno obchodná spoločnosť s.r.o.
+                    </p>
                     <p className="text-gray-500 text-sm mt-1">
                       IČO: 51 629 771
                     </p>
@@ -97,10 +99,10 @@ export default function KontaktPage() {
                       0907 872 591
                     </a>
                     <a
-                      href="tel:+421915450618"
+                      href="tel:+421902681203"
                       className="block text-teal hover:text-teal-dark transition-colors"
                     >
-                      0915 450 618
+                      0902 681 203
                     </a>
                   </div>
                 </div>
@@ -160,8 +162,9 @@ export default function KontaktPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Adresa</h3>
-                    <p className="text-gray-600">M.R. Štefánika 911/53</p>
-                    <p className="text-gray-600">Detva 962 12</p>
+                    <p className="text-gray-600">Vimperská 938/5</p>
+                    <p className="text-gray-600">962 12 Detva</p>
+                    <p className="text-gray-600">Slovenská republika</p>
                   </div>
                 </div>
 
@@ -339,7 +342,7 @@ export default function KontaktPage() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Mapa - Poseidon works s.r.o., Detva"
+          title="Mapa - MQM stavebno obchodná spoločnosť s.r.o., Detva"
           className="absolute inset-0"
         />
         {!mapActive && (

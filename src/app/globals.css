@@ -1,22 +1,97 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-teal: #148ba9;
-  --color-teal-dark: #0e6d85;
-  --color-teal-light: #1aa3c6;
-  --color-dark: #1a1a2e;
-  --color-dark-light: #16213e;
-  --font-sans: var(--font-roboto-condensed);
+  --color-teal: #0f8397;
+  --color-teal-dark: #0b6477;
+  --color-teal-light: #44bac5;
+  --color-dark: #061f30;
+  --color-dark-light: #0d3147;
+  --font-sans: var(--font-manrope);
 }
 
 html {
   scroll-behavior: auto;
+  background: #eef7fe;
 }
 
 body {
-  font-family: var(--font-roboto-condensed), Arial, Helvetica, sans-serif;
-  color: #171717;
-  background: #ffffff;
+  font-family: var(--font-manrope), "Trebuchet MS", sans-serif;
+  color: #0b2436;
+  letter-spacing: 0.002em;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(68, 186, 197, 0.25), transparent 40%),
+    radial-gradient(circle at 95% 15%, rgba(15, 131, 151, 0.2), transparent 38%),
+    linear-gradient(180deg, #f4fbff 0%, #ffffff 45%, #f7fffc 100%);
+}
+
+h1,
+h2 {
+  font-family: var(--font-rajdhani), "Arial Narrow", sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-rajdhani), "Arial Narrow", sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  font-family: "Trebuchet MS", var(--font-manrope), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+}
+
+section {
+  position: relative;
+}
+
+.bg-gray-50 {
+  background:
+    radial-gradient(circle at top right, rgba(15, 131, 151, 0.08), transparent 45%),
+    linear-gradient(140deg, rgba(234, 247, 253, 0.9), rgba(241, 252, 247, 0.95));
+}
+
+.bg-dark {
+  background: linear-gradient(145deg, #041826 0%, #0b2f44 55%, #13506c 100%);
+}
+
+.shadow-sm {
+  box-shadow: 0 20px 40px -30px rgba(5, 33, 52, 0.7);
+}
+
+.rounded-lg {
+  border-radius: 0.85rem;
+}
+
+.rounded-xl {
+  border-radius: 1.1rem;
+}
+
+a,
+button {
+  transition:
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+@media (max-width: 639px) {
+  [class*="max-w-[90%]"][class*="mx-auto"],
+  [class*="max-w-4xl"][class*="mx-auto"] {
+    width: 90vw;
+    max-width: 90vw;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 
 @keyframes lightbox-zoom-in {
