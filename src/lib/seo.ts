@@ -12,7 +12,7 @@ export type SeoConfig = {
   generator?: string;
   ogLocale: string;
   ogSiteName: string;
-  ogType: string;
+  ogType: "website" | "article" | "activity";
   ogTitle: string;
   ogDescription?: string;
   ogUrl: string;
@@ -71,10 +71,7 @@ export const seo = {
 } as const satisfies Record<string, SeoConfig>;
 
 export function toMetadata(config: SeoConfig): Metadata {
-  const resolvedOgType =
-    config.ogType === "activity"
-      ? "website"
-      : (config.ogType as NonNullable<NonNullable<Metadata["openGraph"]>["type"]>);
+  const resolvedOgType = config.ogType === "article" ? "article" : "website";
 
   return {
     title: config.title,
