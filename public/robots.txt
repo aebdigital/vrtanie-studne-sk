@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.vrtanie-studne.sk/sitemap.xml

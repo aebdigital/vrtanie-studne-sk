@@ -3,16 +3,17 @@ import homeSchema from "@/lib/seo-schemas/home.json";
 import cennikSchema from "@/lib/seo-schemas/cennik.json";
 import fotogaleriaSchema from "@/lib/seo-schemas/fotogaleria.json";
 import kontaktSchema from "@/lib/seo-schemas/kontakt.json";
+import mesta1Schema from "@/lib/seo-schemas/mesta1.json";
+import mesta2Schema from "@/lib/seo-schemas/mesta2.json";
 
 export type SeoConfig = {
   title: string;
   description?: string;
   robots: string;
   canonical: string;
-  generator?: string;
   ogLocale: string;
   ogSiteName: string;
-  ogType: "website" | "article" | "activity";
+  ogType: "website" | "article";
   ogTitle: string;
   ogDescription?: string;
   ogUrl: string;
@@ -24,10 +25,9 @@ export type SeoConfig = {
 
 const shared = {
   robots: "max-image-preview:large",
-  generator: "All in One SEO (AIOSEO) 4.8.1.1",
   ogLocale: "sk_SK",
-  ogSiteName: "Vŕtanie studne Banská Bystrica, Zvolen, Brezno |",
-  ogType: "activity",
+  ogSiteName: "Vŕtanie studne Banská Bystrica, Zvolen, Brezno",
+  ogType: "website",
   twitterCard: "summary",
 } as const;
 
@@ -68,6 +68,24 @@ export const seo = {
     twitterTitle: "Kontakt | Vŕtanie studne Banská Bystrica, Zvolen, Brezno",
     schema: kontaktSchema as Record<string, unknown>,
   },
+  mesta1: {
+    ...shared,
+    title: "Vŕtanie studne Žiar nad Hronom, Žarnovica, Banská Štiavnica | Vŕtanie studne Banská Bystrica, Zvolen, Brezno",
+    canonical: "https://www.vrtanie-studne.sk/mesta1/",
+    ogTitle: "Vŕtanie studne Žiar nad Hronom, Žarnovica, Banská Štiavnica | Vŕtanie studne Banská Bystrica, Zvolen, Brezno",
+    ogUrl: "https://www.vrtanie-studne.sk/mesta1/",
+    twitterTitle: "Vŕtanie studne Žiar nad Hronom, Žarnovica, Banská Štiavnica | Vŕtanie studne Banská Bystrica, Zvolen, Brezno",
+    schema: mesta1Schema as Record<string, unknown>,
+  },
+  mesta2: {
+    ...shared,
+    title: "Vŕtanie studne Detva, Lučenec, Rimavská Sobota | Vŕtanie studne Banská Bystrica, Zvolen, Brezno",
+    canonical: "https://www.vrtanie-studne.sk/mesta2/",
+    ogTitle: "Vŕtanie studne Detva, Lučenec, Rimavská Sobota | Vŕtanie studne Banská Bystrica, Zvolen, Brezno",
+    ogUrl: "https://www.vrtanie-studne.sk/mesta2/",
+    twitterTitle: "Vŕtanie studne Detva, Lučenec, Rimavská Sobota | Vŕtanie studne Banská Bystrica, Zvolen, Brezno",
+    schema: mesta2Schema as Record<string, unknown>,
+  },
 } as const satisfies Record<string, SeoConfig>;
 
 export function toMetadata(config: SeoConfig): Metadata {
@@ -80,7 +98,6 @@ export function toMetadata(config: SeoConfig): Metadata {
     alternates: {
       canonical: config.canonical,
     },
-    generator: config.generator,
     openGraph: {
       locale: config.ogLocale,
       siteName: config.ogSiteName,
@@ -93,9 +110,6 @@ export function toMetadata(config: SeoConfig): Metadata {
       card: config.twitterCard as "summary",
       title: config.twitterTitle,
       description: config.twitterDescription || undefined,
-    },
-    other: {
-      "og:type": config.ogType,
     },
   };
 }
