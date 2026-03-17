@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ParallaxHero from "@/components/ParallaxHero";
+import HeroSlider from "@/components/HeroSlider";
 import SeoSchema from "@/components/SeoSchema";
 import { seo, toMetadata } from "@/lib/seo";
 
@@ -25,8 +26,8 @@ const benefits = [
         />
       </svg>
     ),
-    title: "Ekonomické riešenie",
-    desc: "Výrazná úspora vody a financií. Vlastná studňa vám zníži náklady na vodu až o 100%.",
+    title: "Úspora",
+    desc: "Ekonomické riešenie ohľadne výraznej úspory vody",
   },
   {
     icon: (
@@ -45,8 +46,8 @@ const benefits = [
         />
       </svg>
     ),
-    title: "Nezávislosť od dodávateľa",
-    desc: "Nie ste závislí od dodávateľa vody. Vaša vlastná studňa vám zabezpečí stály prístup k vode.",
+    title: "Nezávislosť",
+    desc: "Nie ste závislí od dodávateľa, svoje úspory máte plne pod kontrolou",
   },
   {
     icon: (
@@ -66,7 +67,7 @@ const benefits = [
       </svg>
     ),
     title: "Čistá a zdravá voda",
-    desc: "Čistá a zdravá voda bez chlóru priamo z podzemných zdrojov. Prírodná kvalita bez chemickej úpravy.",
+    desc: "Čistá a zdravá voda bez chlóru a ostatných pridaných chemických látok",
   },
   {
     icon: (
@@ -86,81 +87,7 @@ const benefits = [
       </svg>
     ),
     title: "Dostatok vody",
-    desc: "Celoročný dostatok vody bez obmedzení. Vŕtaná studňa poskytuje stabilný a dostatočný zdroj vody.",
-  },
-];
-
-const advantages = [
-  {
-    title: "Nezávislosť od verejného vodovodu",
-    desc: "Vlastná vŕtaná studňa vám zabezpečí úplnú nezávislosť od verejného vodovodu a jeho prípadných výpadkov či obmedzení.",
-  },
-  {
-    title: "Výrazná finančná úspora",
-    desc: "Po počiatočnej investícii už neplatíte za vodné a stočné. Úspora môže byť až niekoľko stoviek eur ročne.",
-  },
-  {
-    title: "Kvalitná podzemná voda",
-    desc: "Podzemná voda je prírodne filtrovaná cez vrstvy hornín a je často kvalitnejšia ako voda z verejného vodovodu.",
-  },
-  {
-    title: "Vysoká výdatnosť a stabilita",
-    desc: "Vŕtané studne dosahujú väčšiu hĺbku a tým aj vyššiu výdatnosť a stabilitu dodávky vody počas celého roka.",
-  },
-  {
-    title: "Minimálne priestorové nároky",
-    desc: "Vŕtaná studňa zaberá minimálny priestor na vašom pozemku - priemer vrtu je len 190 mm.",
-  },
-  {
-    title: "Dlhá životnosť",
-    desc: "Správne zhotovená vŕtaná studňa môže slúžiť niekoľko desaťročí bez nutnosti väčších opráv.",
-  },
-  {
-    title: "Ekologické výhody",
-    desc: "Využívanie podzemnej vody je ekologické a šetrné k životnému prostrediu. Znížite svoju ekologickú stopu.",
-  },
-];
-
-const processSteps = [
-  {
-    step: "1",
-    title: "Hydrogeologický prieskum",
-    desc: "Odborný prieskum lokality a určenie optimálneho miesta pre vrt.",
-  },
-  {
-    step: "2",
-    title: "Prútikárenie",
-    desc: "Tradícia prútikárstva na overenie prítomnosti podzemnej vody.",
-  },
-  {
-    step: "3",
-    title: "Vŕtanie",
-    desc: "Profesionálne vŕtanie pomocou modernej techniky Hutte HBR.",
-  },
-  {
-    step: "4",
-    title: "Inštalácia rúr",
-    desc: "Osadenie potravinárskeho modrého PVC potrubia s priemerom 140 mm.",
-  },
-  {
-    step: "5",
-    title: "Štrkovanie",
-    desc: "Zasypanie priestoru medzi rúrami a vrtom praným dunajským štrkom 4-8 mm.",
-  },
-  {
-    step: "6",
-    title: "Bentonitové tesnenie",
-    desc: "Utesnenie vrchnej časti vrtu bentonitom proti vtekaniu povrchovej vody.",
-  },
-  {
-    step: "7",
-    title: "Inštalácia čerpadla",
-    desc: "Osadenie ponorného čerpadla a pripojenie na vodovodný systém.",
-  },
-  {
-    step: "8",
-    title: "Odovzdanie",
-    desc: "Odskúšanie studne, odovzdanie dokumentácie a inštruktáž.",
+    desc: "Výdatnosť za každých okolností \u2013 a to aj počas sucha a horúcich letných mesiacov",
   },
 ];
 
@@ -176,19 +103,6 @@ const galleryPreview = [
   "vrtanie_studni18.jpg",
 ];
 
-const serviceAreas = [
-  "Detva",
-  "Lučenec",
-  "Rimavská Sobota",
-  "Zvolen",
-  "Banská Bystrica",
-  "Žiar nad Hronom",
-  "Banská Štiavnica",
-  "Žarnovica",
-  "Brezno",
-  "Horehronie",
-];
-
 export default function Home() {
   return (
     <>
@@ -199,74 +113,7 @@ export default function Home() {
         imageSrc="/images/external-new/vrtanie-studni01.jpg"
         imageAlt="Vŕtanie studní"
       >
-        <div className="relative z-10 max-w-[90%] mx-auto px-4 py-14 sm:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.85fr)] gap-8 lg:gap-10 items-end">
-            <div className="text-center lg:text-left">
-              <p className="eyebrow inline-flex rounded-full border border-white/35 bg-white/10 px-4 py-2 text-xs text-white/90 mb-5">
-                MQM stavebno obchodná spoločnosť s.r.o.
-              </p>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-5 leading-[1.03]">
-                Profesionálne vŕtanie studní
-              </h1>
-              <p className="text-base sm:text-xl md:text-2xl text-teal-light font-semibold mb-5 uppercase tracking-[0.09em]">
-                Banská Bystrica, Zvolen, Brezno a celé stredné Slovensko
-              </p>
-              <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-7 max-w-3xl mx-auto lg:mx-0">
-                Dlhoročné skúsenosti, moderná technika a fér ceny. Zabezpečíme
-                vám vlastný zdroj čistej podzemnej vody. Garancia nájdenia
-                vody, bezplatné poradenstvo a doprava zdarma.
-              </p>
-
-              <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-7">
-                <a
-                  href="tel:+421907872591"
-                  className="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-4 py-2 text-sm sm:text-base font-semibold text-white hover:bg-white/20"
-                >
-                  0907 872 591
-                </a>
-                <a
-                  href="mailto:info@vrtanie-studne.sk"
-                  className="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-4 py-2 text-sm sm:text-base font-semibold text-white hover:bg-white/20"
-                >
-                  info@vrtanie-studne.sk
-                </a>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                <Link
-                  href="/kontakt"
-                  className="inline-flex items-center justify-center bg-teal hover:bg-teal-dark text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
-                >
-                  Nezáväzná ponuka
-                </Link>
-                <a
-                  href="tel:+421902681203"
-                  className="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg border border-white/30"
-                >
-                  0902 681 203
-                </a>
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-white/25 bg-[linear-gradient(150deg,rgba(6,31,48,0.82),rgba(11,47,68,0.72))] p-5 sm:p-6 shadow-[0_28px_52px_-28px_rgba(0,0,0,0.85)] backdrop-blur-sm">
-              <p className="eyebrow text-teal-light text-xs mb-3">Rýchly kontakt</p>
-              <h2 className="text-2xl sm:text-3xl text-white mb-4 leading-tight">
-                Dohodnime termín obhliadky
-              </h2>
-              <div className="space-y-2 text-white">
-                <a
-                  href="tel:+421902681203"
-                  className="block rounded-lg border border-white/20 bg-white/10 px-4 py-2 font-semibold hover:bg-white/20"
-                >
-                  0902 681 203
-                </a>
-              </div>
-              <p className="mt-4 text-sm text-gray-200">
-                Dostupní po celom strednom Slovensku. Odpovedáme rýchlo.
-              </p>
-            </div>
-          </div>
-        </div>
+        <HeroSlider />
       </ParallaxHero>
 
       {/* O nás Section */}
@@ -274,20 +121,38 @@ export default function Home() {
         <div className="max-w-[90%] mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Voda je jednou z najvzácnejších komodít vôbec, a to kdekoľvek na svete. Ak túžite po vlastnom zdroji čistej vody, vďaka ktorému budete nezávislí a zároveň ušetríte svoje peniaze aj životné prostredie, obráťte sa na nás. Navyše, vďaka našej studni už viac nebudete musieť plytvať vodou, pretože svoju spotrebu budete mať celkom pod kontrolou. Vŕtaná studňa je preto výhodnou investíciou nielen dnes, ale aj do budúcna.
+              </p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 O nás
               </h2>
-              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                Voda je jednou z najvzácnejších komodít vôbec. Ak túžite po vlastnom zdroji čistej vody, vďaka ktorému budete nezávislí a zároveň ušetríte svoje peniaze aj životné prostredie, obráťte sa na nás.
-              </p>
               <p className="text-lg text-gray-600 mb-4 leading-relaxed">
                 Sme firma s dlhoročnými skúsenosťami v oblasti vŕtania studní v Detve a ďalších mestách stredného Slovenska. Počas tohto obdobia sme sa pri práci stretli s rôznymi situáciami a komplikáciami, ktoré sme vždy dotiahli do úspešného konca a k spokojnosti zákazníka.
               </p>
               <p className="text-lg text-gray-600 mb-4 leading-relaxed">
                 Našim hlavným zameraním sú vŕtané studne, rovnako však vieme zákazníkovi zabezpečiť technológie cez zapojenie studne, až do konečného užívania.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
                 Našim cieľom je vykonávať prácu na vysoko profesionálnej úrovni, ktorá je šetrná voči životnému prostrediu, pričom kvalita našej práce a vaša spokojnosť sú vždy na prvom mieste.
+              </p>
+              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+                Naše služby ponúkame predovšetkým v lokalite stredného Slovenska ako{" "}
+                <Link href="/mesta2" className="text-teal hover:text-teal-dark underline">
+                  Detva, Lučenec, Rimavská Sobota
+                </Link>{" "}
+                a celé Horehronie, Zvolen, Banská Bystrica,{" "}
+                <Link href="/mesta1" className="text-teal hover:text-teal-dark underline">
+                  Žiar nad Hronom, Banská Štiavnica, Žarnovica
+                </Link>{" "}
+                …
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Tiež realizujeme{" "}
+                <a href="http://www.likvidacia-azbestu.com/" target="_blank" rel="noopener noreferrer" className="text-teal hover:text-teal-dark underline">
+                  likvidáciu azbestu
+                </a>{" "}
+                v rovnakých lokalitách.
               </p>
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {[
@@ -310,126 +175,20 @@ export default function Home() {
               </div>
             </div>
             <div className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">U nás nájdete:</h2>
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Bezplatné poradenstvo</h3>
-                <p className="text-gray-600">Obhliadka lokality a jej odborné posúdenie z geologického a hydrogeologického hľadiska.</p>
+                <p className="text-gray-600">Jeden z prvých krokov pred vŕtaním studne je obhliadka lokality a jej odborné posúdenie z geologického a hydrogeologického hľadiska.</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Hľadanie vody prútikárom</h3>
-                <p className="text-gray-600">Len skúsený prútikár vie určiť to správne miesto, kde bude vrt najvýdatnejší.</p>
+                <p className="text-gray-600">Studňu možno teoreticky vyvŕtať kdekoľvek, avšak len skúsený prútikár vie určiť to správne miesto, kde bude vrt najvýdatnejší.</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Realizácia studne na kľúč</h3>
-                <p className="text-gray-600">Vyvŕtanie, osadenie rúr, obsyp, založenie čerpadla — až po odovzdanie studne novému majiteľovi.</p>
+                <p className="text-gray-600">Vyvŕtanie, osadenie rúr, obsyp, založenie čerpadla - až po odovzdanie studne novému majiteľovi</p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-[90%] mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Prečo vlastná studňa?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Vlastná vŕtaná studňa prináša mnoho výhod pre vašu domácnosť aj
-              podnikanie.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-            {[
-              "external-new/vrtanie-studni07.jpg",
-              "external-new/vrtanie-studni01.jpg",
-              "external-new/vrtanie-studni04.jpg",
-            ].map((img, index) => (
-              <div
-                key={index}
-                className="relative h-44 rounded-xl overflow-hidden shadow-sm"
-              >
-                <Image
-                  src={`/images/${img}`}
-                  alt={`Vŕtanie studní - ukážka ${index + 1}`}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="text-center p-6 rounded-xl bg-gray-50 hover:bg-teal/5 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-teal/10 text-teal mb-4">
-                  {benefit.icon}
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {benefit.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Advantages Section */}
-      <section className="py-16 md:py-24 bg-dark">
-        <div className="max-w-[90%] mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Výhody vŕtanej studne
-            </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Investícia do vlastnej vŕtanej studne sa vám mnohokrát vráti.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-            {[
-              "external-new/vrtanie-studni10.jpg",
-              "external-new/vrtanie-studni04.jpg",
-              "external-new/vrtanie-studni07.jpg",
-            ].map((img, index) => (
-              <div
-                key={index}
-                className="relative h-44 rounded-xl overflow-hidden border border-white/10"
-              >
-                <Image
-                  src={`/images/${img}`}
-                  alt={`Vŕtanie studní - referencia ${index + 1}`}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {advantages.map((adv, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-teal/50 transition-all duration-300"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-teal flex items-center justify-center text-white font-bold text-sm">
-                    {index + 1}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
-                      {adv.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
-                      {adv.desc}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -439,10 +198,10 @@ export default function Home() {
         <div className="max-w-[90%] mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Technické parametre
+              Metóda vŕtania a technológie
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Používame modernú vŕtaciu techniku a kvalitné materiály.
+              Disponujeme dvomi vrtnými súpravami; jedna s vŕtaním do 100m (dostane sa aj na ťažšie prístupné miesta a zvládne aj komplikovanejšie terény) a druhá s vŕtaním do hĺbky až 200m.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -456,44 +215,20 @@ export default function Home() {
             </div>
             <div>
               <div className="space-y-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Popis vrtu:</h2>
                 {[
-                  {
-                    label: "Vŕtacie súpravy",
-                    value: "2 profesionálne vŕtacie súpravy",
-                  },
-                  {
-                    label: "Hĺbka vŕtania",
-                    value: "do 100 m a 200 m",
-                  },
-                  { label: "Priemer vrtu", value: "190 mm" },
-                  {
-                    label: "Priemer rúr",
-                    value: "140 mm (potravinárske modré PVC)",
-                  },
-                  {
-                    label: "Štrkový zásyp",
-                    value: "4-8 mm praný dunajský štrk",
-                  },
-                  {
-                    label: "Vŕtací systém",
-                    value: "Hutte HBR",
-                  },
-                  {
-                    label: "Doba vŕtania",
-                    value: "Typicky 1 deň",
-                  },
+                  "podľa potreby, vždy je dôležité nájsť najsilnejší prítok spodnej vody a ten podvŕtať",
+                  "priemer vrtu – 190mm",
+                  "vonkajší priemer osadenej rúry – 140mm (rúra modrá – potravinárska, závitová) certifikovaná slovenská",
+                  "používaný obsyp – frakcia 4-8mm, vymývaný dunajský štrk",
+                  "Vrtná sústava – zn. Hütte HBR",
                 ].map((spec, index) => (
                   <div
                     key={index}
                     className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm"
                   >
                     <div className="flex-shrink-0 w-2 h-2 rounded-full bg-teal" />
-                    <div>
-                      <span className="font-semibold text-gray-900">
-                        {spec.label}:
-                      </span>{" "}
-                      <span className="text-gray-600">{spec.value}</span>
-                    </div>
+                    <span className="text-gray-700">{spec}</span>
                   </div>
                 ))}
               </div>
@@ -505,68 +240,140 @@ export default function Home() {
       {/* Process Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-[90%] mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Postup prác
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Od prieskumu až po odovzdanie hotovej studne - kompletný servis na
-              jednom mieste.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Priebeh vŕtania
+              </h2>
+              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+                Vaša cesta za čistou a zdravotne nezávadnou vodou sa začína práve u nás. Zabezpečíme celý proces počnúc vyhľadaním spodnej vody na základe hydrogeologického prieskumu a za pomoci prútikára, až po odovzdanie studne do vášho užívania.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Po navŕtaní studne sa osadia studničné rúry, nasledovne sa obsypú štrkom frakcie 4-8mm, zaizoluje sa bentonitom kvôli povrchovej vode, začerpá sa čerpadlo a odovzdá sa do užívania konečnému užívateľovi (napr. ako pitná alebo úžitková voda, zavlažovacie systémy, a pod.). Obvyklá dĺžka vŕtania je 1 deň, čo však môže byť ovplyvnené faktormi ako je napr. hĺbka vrtu či podložie.
+              </p>
+            </div>
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/external-new/vrtanie-studni07.jpg"
+                alt="Priebeh vŕtania studne"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+        </div>
+      </section>
+
+      {/* Výhody vŕtanej studne - Full Text */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-[90%] mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Výhody vŕtanej studne: Spoľahlivý a úsporný zdroj vody pre váš domov či firmu
+          </h2>
+          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            Vŕtaná studňa predstavuje moderný a efektívny spôsob, ako získať vlastný zdroj kvalitnej podzemnej vody priamo na vašom pozemku. Stáva sa čoraz obľúbenejšou voľbou nielen pri rodinných domoch, ale aj v záhradách, chatách či pri priemyselných objektoch. Investícia do vŕtanej studne prináša dlhodobé výhody, ktoré sa prejavia v úspore financií, nezávislosti a komforte. Studne vŕtame v Detve, Zvolene, Banskej Bystrici a celom strednom Slovensku.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              "external-new/vrtanie-studni11.jpg",
-              "external-new/vrtanie-studni12.jpg",
-              "external-new/vrtanie-studni10.jpg",
-            ].map((img, index) => (
-              <div
-                key={index}
-                className="relative h-44 rounded-xl overflow-hidden shadow-sm"
-              >
+              {
+                title: "Nezávislosť od verejného vodovodu",
+                text: "Vlastná studňa vám zabezpečí stály a stabilný prístup k vode bez ohľadu na výpadky či obmedzenia zo strany dodávateľa. Vďaka tomu máte vodu vždy poruke – či už ide o pitie, kúpanie, polievanie záhrady alebo prevádzku domácnosti a technológií.",
+                img: "external-new/vrtanie-studni03.jpg",
+              },
+              {
+                title: "Výrazná finančná úspora",
+                text: "Poplatky za vodu z verejného vodovodu neustále rastú. S vŕtanou studňou platíte len za elektrickú energiu potrebnú na chod čerpadla. V prípade intenzívneho využívania je návratnosť investície prekvapivo rýchla – často už v priebehu niekoľkých rokov.",
+                img: "external-new/vrtanie-studni05.jpg",
+              },
+              {
+                title: "Kvalitná podzemná voda",
+                text: "Voda z hlbších vrtov je prirodzene filtrovaná vrstvami hornín, čo jej dodáva vysokú kvalitu a čistotu. Najčastejšie ide o vodu vhodnú na všetky bežné domáce využitia a po úprave často aj na pitie. V mnohých lokalitách je jej kvalita dokonca vyššia ako voda z verejného vodovodu. Vŕtané studne v Detve a okolí sú veľmi obľúbené.",
+                img: "external-new/vrtanie-studni06.jpg",
+              },
+              {
+                title: "Vysoká výdatnosť a stabilita",
+                text: "Vŕtané studne dosahujú veľkú hĺbku, vďaka čomu sú menej závislé od zrážok. Na rozdiel od kopaných studní poskytujú stabilný prietok počas celého roka a sú spoľahlivé aj v období sucha.",
+                img: "external-new/vrtanie-studni10.jpg",
+              },
+              {
+                title: "Minimálne nároky na priestor",
+                text: "Vďaka malej vrchnnej konštrukcii vŕtaná studňa nezaberá takmer žiadne miesto. Je vhodná aj na menšie pozemky, kde by klasická kopaná studňa nebola možná.",
+                img: "external-new/vrtanie-studni11.jpg",
+              },
+              {
+                title: "Dlhá životnosť",
+                text: "Kvalitne zhotovená vŕtaná studňa má životnosť desiatky rokov. S vhodným čerpadlom a základnou údržbou ide o jednorazovú investíciu, ktorá vám bude slúžiť dlhé roky bez výrazných dodatočných nákladov.",
+                img: "external-new/vrtanie-studni12.jpg",
+              },
+            ].map((item, index) => (
+              <div key={index} className="relative rounded-xl overflow-hidden min-h-[200px] p-6 flex flex-col justify-end">
                 <Image
-                  src={`/images/${img}`}
-                  alt={`Vŕtanie studní - postup ${index + 1}`}
+                  src={`/images/${item.img}`}
+                  alt={item.title}
                   fill
                   className="object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20" />
+                <div className="relative z-10">
+                  <h3 className="text-xl font-semibold text-white mb-3">{item.title}</h3>
+                  <p className="text-white/90 leading-relaxed">{item.text}</p>
+                </div>
               </div>
             ))}
+            <div className="relative rounded-xl overflow-hidden min-h-[200px] p-6 flex flex-col justify-end md:col-span-2">
+              <Image
+                src="/images/vrtanie_studni07.jpg"
+                alt="Ekologické riešenie"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20" />
+              <div className="relative z-10">
+                <h3 className="text-xl font-semibold text-white mb-3">Ekologické riešenie</h3>
+                <p className="text-white/90 leading-relaxed">
+                  Vlastný zdroj vody znižuje zaťaženie verejných vodovodných systémov a umožňuje šetrnejšie nakladanie s prírodnými zdrojmi. Pre majiteľov záhrad či fariem je to ideálne riešenie pre udržateľné zavlažovanie.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {processSteps.map((step, index) => (
-              <div key={index} className="relative">
-                <div className="bg-gray-50 rounded-xl p-6 h-full hover:shadow-lg transition-shadow duration-300">
-                  <div className="w-12 h-12 rounded-full bg-teal text-white flex items-center justify-center font-bold text-lg mb-4">
-                    {step.step}
+        </div>
+      </section>
+
+      {/* Prečo vŕtaná studňa? */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-[90%] mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Prečo vŕtaná studňa?
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {benefits.map((benefit, index) => (
+                <div
+                  key={index}
+                  className="text-center p-6 rounded-xl bg-gray-50 hover:bg-teal/5 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-teal/10 text-teal mb-4">
+                    {benefit.icon}
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {step.title}
+                    {benefit.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    {step.desc}
+                    {benefit.desc}
                   </p>
                 </div>
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 -right-3 text-teal z-10">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </div>
-                )}
-              </div>
-            ))}
+              ))}
+            </div>
+            <div className="relative rounded-xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/external-new/vrtanie-studni04.jpg"
+                alt="Prečo vŕtaná studňa"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -576,11 +383,8 @@ export default function Home() {
         <div className="max-w-[90%] mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Z našich realizácií
+              Fotogaléria
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Pozrite si ukážky našej práce z terénu.
-            </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {galleryPreview.map((img, index) => (
@@ -621,99 +425,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Service Areas */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-[90%] mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Oblasti pôsobnosti
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Poskytujeme služby vŕtania studní v širokej oblasti stredného
-              Slovenska.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-            {[
-              "external-new/vrtanie-studni06.jpg",
-              "external-new/vrtanie-studni03.jpg",
-            ].map((img, index) => (
-              <div
-                key={index}
-                className="relative h-52 rounded-xl overflow-hidden shadow-sm"
-              >
-                <Image
-                  src={`/images/${img}`}
-                  alt={`Vŕtanie studní - oblasť pôsobnosti ${index + 1}`}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            {serviceAreas.map((area, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg hover:bg-teal/5 transition-colors"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-teal flex-shrink-0"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="font-medium text-gray-800">{area}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Azbest Services + CTA */}
+      {/* CTA */}
       <section className="py-16 md:py-24 bg-teal">
         <div className="max-w-[90%] mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Máte záujem o vlastnú studňu?
+            Zavolajte nám!
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Kontaktujte nás pre bezplatnú konzultáciu a nezáväznú cenovú ponuku.
-            Radi vám poradíme s výberom najlepšieho riešenia.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Link
-              href="/kontakt"
-              className="inline-flex items-center justify-center bg-white text-teal font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-lg"
-            >
-              Kontaktujte nás
-            </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <a
               href="tel:+421907872591"
-              className="inline-flex items-center justify-center border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/10 transition-colors text-lg"
+              className="inline-flex items-center justify-center bg-white text-teal font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-lg"
             >
               0907 872 591
             </a>
+            <a
+              href="mailto:info@vrtanie-studne.sk"
+              className="inline-flex items-center justify-center border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/10 transition-colors text-lg"
+            >
+              info@vrtanie-studne.sk
+            </a>
           </div>
-          <div className="border-t border-white/20 pt-8">
-            <p className="text-white/80 text-sm">
-              Okrem vŕtania studní ponúkame aj služby v oblasti likvidácie
-              azbestu.{" "}
-              <a
-                href="http://www.likvidacia-azbestu.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white underline hover:text-white/80 transition-colors"
-              >
-                Viac informácií o odstraňovaní azbestu
-              </a>
-            </p>
-          </div>
+          <Link
+            href="/kontakt"
+            className="inline-flex items-center justify-center border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/10 transition-colors text-lg"
+          >
+            Kontakt
+          </Link>
         </div>
       </section>
     </>

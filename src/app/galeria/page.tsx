@@ -87,14 +87,19 @@ export default function GaleriaPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-dark py-20">
-        <div className="max-w-[90%] mx-auto px-4 text-center">
+      <section className="relative min-h-[320px] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/external-new/vrtanie-studni01.jpg"
+            alt="Vŕtanie studní fotogaléria"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(68,186,197,0.34),transparent_42%),linear-gradient(118deg,rgba(3,17,29,0.94)_0%,rgba(6,31,48,0.86)_45%,rgba(9,50,71,0.68)_100%)]" />
+        </div>
+        <div className="relative z-10 max-w-[90%] mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Fotogaléria
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Pozrite si fotografie z našich realizácií vŕtania studní v teréne
-          </p>
         </div>
       </section>
 

@@ -21,182 +21,67 @@ export default function KontaktPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-dark py-20">
-        <div className="max-w-[90%] mx-auto px-4 text-center">
+      <section className="relative min-h-[320px] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/external-new/vrtanie-studni01.jpg"
+            alt="Vŕtanie studní kontakt"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(68,186,197,0.34),transparent_42%),linear-gradient(118deg,rgba(3,17,29,0.94)_0%,rgba(6,31,48,0.86)_45%,rgba(9,50,71,0.68)_100%)]" />
+        </div>
+        <div className="relative z-10 max-w-[90%] mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Kontakt
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Kontaktujte nás pre bezplatnú konzultáciu a nezáväznú cenovú ponuku
-          </p>
         </div>
       </section>
 
-      {/* Contact Info + Form */}
+      {/* Contact Info */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-[90%] mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-8">
-                Kontaktné údaje
-              </h2>
-
-              <div className="space-y-6">
-                {/* Company */}
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-teal/10 text-teal flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Spoločnosť</h3>
-                    <p className="text-gray-600">
-                      MQM stavebno obchodná spoločnosť s.r.o.
-                    </p>
-                    <p className="text-gray-500 text-sm mt-1">
-                      IČO: 51 629 771
-                    </p>
-                  </div>
-                </div>
-
-                {/* Phone */}
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-teal/10 text-teal flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Telefón</h3>
-                    <a
-                      href="tel:+421907872591"
-                      className="block text-teal hover:text-teal-dark transition-colors"
-                    >
-                      0907 872 591
-                    </a>
-                    <a
-                      href="tel:+421902681203"
-                      className="block text-teal hover:text-teal-dark transition-colors"
-                    >
-                      0902 681 203
-                    </a>
-                  </div>
-                </div>
-
-                {/* Email */}
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-teal/10 text-teal flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Email</h3>
-                    <a
-                      href="mailto:info@vrtanie-studne.sk"
-                      className="text-teal hover:text-teal-dark transition-colors"
-                    >
-                      info@vrtanie-studne.sk
-                    </a>
-                  </div>
-                </div>
-
-                {/* Address */}
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-teal/10 text-teal flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Adresa</h3>
-                    <p className="text-gray-600">Vimperská 938/5</p>
-                    <p className="text-gray-600">962 12 Detva</p>
-                    <p className="text-gray-600">Slovenská republika</p>
-                  </div>
-                </div>
-
-                {/* Facebook */}
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-teal/10 text-teal flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Facebook</h3>
-                    <a
-                      href="https://www.facebook.com/Vrtanie-studnesk-100488798718419"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-teal hover:text-teal-dark transition-colors"
-                    >
-                      Sledujte nás na Facebooku
-                    </a>
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
+            {/* Phone */}
+            <div className="text-center p-6 rounded-xl bg-gray-50">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-teal/10 text-teal mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
               </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Zavolajte nám</h3>
+              <a href="tel:+421907872591" className="block text-teal hover:text-teal-dark transition-colors">0907 872 591</a>
+              <a href="tel:+421902681203" className="block text-teal hover:text-teal-dark transition-colors">0902 681 203</a>
             </div>
 
-            {/* Contact Form */}
-            <div>
+            {/* Email */}
+            <div className="text-center p-6 rounded-xl bg-gray-50">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-teal/10 text-teal mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
+              <a href="mailto:info@vrtanie-studne.sk" className="text-teal hover:text-teal-dark transition-colors">info@vrtanie-studne.sk</a>
+            </div>
+
+            {/* Address */}
+            <div className="text-center p-6 rounded-xl bg-gray-50">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-teal/10 text-teal mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Adresa</h3>
+              <p className="text-gray-600">MQM stavebno obchodná spoločnosť s.r.o.</p>
+              <p className="text-gray-600">Vimperská 938/5</p>
+              <p className="text-gray-600">Detva 962 12</p>
+              <p className="text-gray-500 text-sm mt-1">IČO: 51 629 771</p>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="max-w-2xl mx-auto">
               <h2 className="text-2xl font-bold text-gray-900 mb-8">
                 Napíšte nám
               </h2>
@@ -327,7 +212,6 @@ export default function KontaktPage() {
                   </button>
                 </form>
               )}
-            </div>
           </div>
         </div>
       </section>

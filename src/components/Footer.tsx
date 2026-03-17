@@ -73,6 +73,16 @@ export default function Footer() {
                     Kontakt
                   </Link>
                 </li>
+                <li>
+                  <Link href="/mesta2" className="hover:text-teal-light">
+                    Vŕtanie studní Detva, Lučenec, Rimavská Sobota
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/mesta1" className="hover:text-teal-light">
+                    Vŕtanie studní Žiar nad Hronom, Banská Štiavnica, Žarnovica
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -102,8 +112,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-white/20 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between text-sm text-white/70">
-          <p>&copy; {new Date().getFullYear()} www.vrtanie-studne.sk</p>
-          <p>Všetky práva vyhradené</p>
+          <p>&copy; 2026 MQM stavebno obchodná spoločnosť s.r.o. Všetky práva vyhradené</p>
         </div>
       </div>
     </footer>
