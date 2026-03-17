@@ -41,28 +41,40 @@ export default function CennikPage() {
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-[90%] mx-auto px-4">
           <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center uppercase">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center uppercase">
               Prečo sa obrátiť na naše služby?
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-4 leading-relaxed">
-              Bez vody niet života. Voda patrí k najdôležitejším prírodným zdrojom vôbec a jej úloha pre človeka, ako aj poľnohospodárstvo bola významná tak v minulosti, ako aj dnes. V súčasnosti je väčšina domácností napojených na verejné vodovody, no nájdu sa aj takí, ktorí dávajú prednosť studni.
-            </p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-4 leading-relaxed">
-              Či je za tým nevyhnutnosť, alebo snaha ušetriť a byť nezávislým od verejného vodovodu, budovanie studní sa teší veľkej obľube. K zástancom tohto výdatného zdroja vody patria aj záhradkári či chalupári, ktorí takto majú spotrebu pod kontrolou a koniec-koncov dokážu ušetriť nemalé financie.
-            </p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-4 leading-relaxed italic">
-              „Len čistá a zdravú voda bez chlóru a pridaných chemických látok"
-            </p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-4 leading-relaxed">
-              Vŕtané studne sú bezpochyby investíciou do zdravia, ktorú oceníte nielen dnes, ale aj neskôr, v budúcnosti. Okrem finančnej úspory vám prinesie tiež:
-            </p>
-            <ul className="text-lg text-gray-600 max-w-3xl mx-auto mb-4 leading-relaxed list-disc pl-6 space-y-2">
-              <li>úplnú nezávislosť- od počasia aj dodávateľov – vlastnú spotrebu máte plne pod kontrolou</li>
-              <li>dostatok vody, výdatnosť za každých okolností, a to aj počas sucha a horúcich letných mesiacov</li>
-            </ul>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
-              Pokiaľ ste z miest ako Detva, Lučenec, Rimavská Sobota, prípadne blízkeho okolia, neváhajte nás kontaktovať. Zabezpečíme vám kompletný servis vŕtania studne za atraktívne ceny.
-            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+                  Bez vody niet života. Voda patrí k najdôležitejším prírodným zdrojom vôbec a jej úloha pre človeka, ako aj poľnohospodárstvo bola významná tak v minulosti, ako aj dnes. V súčasnosti je väčšina domácností napojených na verejné vodovody, no nájdu sa aj takí, ktorí dávajú prednosť studni.
+                </p>
+                <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+                  Či je za tým nevyhnutnosť, alebo snaha ušetriť a byť nezávislým od verejného vodovodu, budovanie studní sa teší veľkej obľube. K zástancom tohto výdatného zdroja vody patria aj záhradkári či chalupári, ktorí takto majú spotrebu pod kontrolou a koniec-koncov dokážu ušetriť nemalé financie.
+                </p>
+                <p className="text-lg text-gray-600 mb-4 leading-relaxed italic">
+                  „Len čistá a zdravú voda bez chlóru a pridaných chemických látok"
+                </p>
+                <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+                  Vŕtané studne sú bezpochyby investíciou do zdravia, ktorú oceníte nielen dnes, ale aj neskôr, v budúcnosti. Okrem finančnej úspory vám prinesie tiež:
+                </p>
+                <ul className="text-lg text-gray-600 mb-4 leading-relaxed list-disc pl-6 space-y-2">
+                  <li>úplnú nezávislosť- od počasia aj dodávateľov – vlastnú spotrebu máte plne pod kontrolou</li>
+                  <li>dostatok vody, výdatnosť za každých okolností, a to aj počas sucha a horúcich letných mesiacov</li>
+                </ul>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Pokiaľ ste z miest ako Detva, Lučenec, Rimavská Sobota, prípadne blízkeho okolia, neváhajte nás kontaktovať. Zabezpečíme vám kompletný servis vŕtania studne za atraktívne ceny.
+                </p>
+              </div>
+              <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl">
+                <Image
+                  src="/images/external-new/vrtanie-studni05.jpg"
+                  alt="Prečo sa obrátiť na naše služby"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -128,28 +140,38 @@ export default function CennikPage() {
       {/* Náš cenník */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-[90%] mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Náš cenník:
-            </h2>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Cena kvalitne zrealizovanej studne sa odvíja od viacerých faktorov, z ktorých je geologické podložie pozemku tým najdôležitejším.
-            </p>
-            <p className="text-2xl font-bold text-teal mb-8">
-              Za 1 bm u nás zaplatíte už od 65€
-            </p>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Nasa cena zahŕňa:
-            </h3>
-            <ul className="text-lg text-gray-600 mb-8 leading-relaxed space-y-2">
-              <li>– dopravu</li>
-              <li>– vŕtanie</li>
-              <li>– osadenie rúry</li>
-              <li>– obsyp</li>
-            </ul>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              V prípade realizácie studne na kľúč je potrebné ku konečnej cene služieb započítať tiež použité technológie (šachta, čerpadlo, tlaková nádoba, ventily, káble, redukcie, atď.), ako aj prácu vodára; prípadne použitie bagra.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/external-new/vrtanie-studni12.jpg"
+                alt="Náš cenník - vŕtanie studní"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Náš cenník:
+              </h2>
+              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
+                Cena kvalitne zrealizovanej studne sa odvíja od viacerých faktorov, z ktorých je geologické podložie pozemku tým najdôležitejším.
+              </p>
+              <p className="text-3xl font-bold text-teal mb-8">
+                Za 1 bm u nás zaplatíte už od 65€
+              </p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Nasa cena zahŕňa:
+              </h3>
+              <ul className="text-xl text-gray-600 mb-8 leading-relaxed space-y-2">
+                <li>– dopravu</li>
+                <li>– vŕtanie</li>
+                <li>– osadenie rúry</li>
+                <li>– obsyp</li>
+              </ul>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                V prípade realizácie studne na kľúč je potrebné ku konečnej cene služieb započítať tiež použité technológie (šachta, čerpadlo, tlaková nádoba, ventily, káble, redukcie, atď.), ako aj prácu vodára; prípadne použitie bagra.
+              </p>
+            </div>
           </div>
         </div>
       </section>
