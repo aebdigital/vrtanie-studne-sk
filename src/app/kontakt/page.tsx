@@ -10,12 +10,35 @@ export default function KontaktPage() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [mapActive, setMapActive] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // In production, this would send the form data to an API
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Nepodarilo sa odoslať správu.");
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError("Nepodarilo sa odoslať správu. Skúste to prosím neskôr.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -204,11 +227,18 @@ export default function KontaktPage() {
                     />
                   </div>
 
+                  {error && (
+                    <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700 text-sm">
+                      {error}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full bg-teal hover:bg-teal-dark text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
+                    disabled={loading}
+                    className="w-full bg-teal hover:bg-teal-dark disabled:opacity-60 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
                   >
-                    Odoslať správu
+                    {loading ? "Odosiela sa..." : "Odoslať správu"}
                   </button>
                 </form>
               )}
