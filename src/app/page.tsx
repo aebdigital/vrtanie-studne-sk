@@ -110,88 +110,11 @@ export default function Home() {
 
       {/* Hero Section */}
       <ParallaxHero
-        imageSrc="/images/external-new/vrtanie-studni01.jpg"
+        imageSrc="/images/external-new/vrtanie-studni03.jpg"
         imageAlt="Vŕtanie studní"
       >
         <HeroSlider />
       </ParallaxHero>
-
-      {/* O nás Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="max-w-[90%] mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Voda je jednou z najvzácnejších komodít vôbec, a to kdekoľvek na svete. Ak túžite po vlastnom zdroji čistej vody, vďaka ktorému budete nezávislí a zároveň ušetríte svoje peniaze aj životné prostredie, obráťte sa na nás. Navyše, vďaka našej studni už viac nebudete musieť plytvať vodou, pretože svoju spotrebu budete mať celkom pod kontrolou. Vŕtaná studňa je preto výhodnou investíciou nielen dnes, ale aj do budúcna.
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                O nás
-              </h2>
-              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                Sme firma s dlhoročnými skúsenosťami v oblasti vŕtania studní v Detve a ďalších mestách stredného Slovenska. Počas tohto obdobia sme sa pri práci stretli s rôznymi situáciami a komplikáciami, ktoré sme vždy dotiahli do úspešného konca a k spokojnosti zákazníka.
-              </p>
-              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                Našim hlavným zameraním sú vŕtané studne, rovnako však vieme zákazníkovi zabezpečiť technológie cez zapojenie studne, až do konečného užívania.
-              </p>
-              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                Našim cieľom je vykonávať prácu na vysoko profesionálnej úrovni, ktorá je šetrná voči životnému prostrediu, pričom kvalita našej práce a vaša spokojnosť sú vždy na prvom mieste.
-              </p>
-              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                Naše služby ponúkame predovšetkým v lokalite stredného Slovenska ako{" "}
-                <Link href="/mesta2" className="text-teal hover:text-teal-dark underline">
-                  Detva, Lučenec, Rimavská Sobota
-                </Link>{" "}
-                a celé Horehronie, Zvolen, Banská Bystrica,{" "}
-                <Link href="/mesta1" className="text-teal hover:text-teal-dark underline">
-                  Žiar nad Hronom, Banská Štiavnica, Žarnovica
-                </Link>{" "}
-                …
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Tiež realizujeme{" "}
-                <a href="http://www.likvidacia-azbestu.com/" target="_blank" rel="noopener noreferrer" className="text-teal hover:text-teal-dark underline">
-                  likvidáciu azbestu
-                </a>{" "}
-                v rovnakých lokalitách.
-              </p>
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {[
-                  "external-new/vrtanie-studni12.jpg",
-                  "external-new/vrtanie-studni03.jpg",
-                  "external-new/vrtanie-studni06.jpg",
-                ].map((img, index) => (
-                  <div
-                    key={index}
-                    className="relative h-40 rounded-xl overflow-hidden shadow-sm"
-                  >
-                    <Image
-                      src={`/images/${img}`}
-                      alt={`Vŕtanie studní - detail realizácie ${index + 1}`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">U nás nájdete:</h2>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Bezplatné poradenstvo</h3>
-                <p className="text-gray-600">Jeden z prvých krokov pred vŕtaním studne je obhliadka lokality a jej odborné posúdenie z geologického a hydrogeologického hľadiska.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Hľadanie vody prútikárom</h3>
-                <p className="text-gray-600">Studňu možno teoreticky vyvŕtať kdekoľvek, avšak len skúsený prútikár vie určiť to správne miesto, kde bude vrt najvýdatnejší.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Realizácia studne na kľúč</h3>
-                <p className="text-gray-600">Vyvŕtanie, osadenie rúr, obsyp, založenie čerpadla - až po odovzdanie studne novému majiteľovi</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Technical Specifications */}
       <section className="py-16 md:py-24 bg-gray-50">
@@ -421,6 +344,83 @@ export default function Home() {
                 />
               </svg>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* O nás Section */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-[90%] mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Voda je jednou z najvzácnejších komodít vôbec, a to kdekoľvek na svete. Ak túžite po vlastnom zdroji čistej vody, vďaka ktorému budete nezávislí a zároveň ušetríte svoje peniaze aj životné prostredie, obráťte sa na nás. Navyše, vďaka našej studni už viac nebudete musieť plytvať vodou, pretože svoju spotrebu budete mať celkom pod kontrolou. Vŕtaná studňa je preto výhodnou investíciou nielen dnes, ale aj do budúcna.
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                O nás
+              </h2>
+              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+                Sme firma s dlhoročnými skúsenosťami v oblasti vŕtania studní v Detve a ďalších mestách stredného Slovenska. Počas tohto obdobia sme sa pri práci stretli s rôznymi situáciami a komplikáciami, ktoré sme vždy dotiahli do úspešného konca a k spokojnosti zákazníka.
+              </p>
+              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+                Našim hlavným zameraním sú vŕtané studne, rovnako však vieme zákazníkovi zabezpečiť technológie cez zapojenie studne, až do konečného užívania.
+              </p>
+              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+                Našim cieľom je vykonávať prácu na vysoko profesionálnej úrovni, ktorá je šetrná voči životnému prostrediu, pričom kvalita našej práce a vaša spokojnosť sú vždy na prvom mieste.
+              </p>
+              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+                Naše služby ponúkame predovšetkým v lokalite stredného Slovenska ako{" "}
+                <Link href="/mesta2" className="text-teal hover:text-teal-dark underline">
+                  Detva, Lučenec, Rimavská Sobota
+                </Link>{" "}
+                a celé Horehronie, Zvolen, Banská Bystrica,{" "}
+                <Link href="/mesta1" className="text-teal hover:text-teal-dark underline">
+                  Žiar nad Hronom, Banská Štiavnica, Žarnovica
+                </Link>{" "}
+                …
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Tiež realizujeme{" "}
+                <a href="http://www.likvidacia-azbestu.com/" target="_blank" rel="noopener noreferrer" className="text-teal hover:text-teal-dark underline">
+                  likvidáciu azbestu
+                </a>{" "}
+                v rovnakých lokalitách.
+              </p>
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  "external-new/vrtanie-studni12.jpg",
+                  "external-new/vrtanie-studni03.jpg",
+                  "external-new/vrtanie-studni06.jpg",
+                ].map((img, index) => (
+                  <div
+                    key={index}
+                    className="relative h-40 rounded-xl overflow-hidden shadow-sm"
+                  >
+                    <Image
+                      src={`/images/${img}`}
+                      alt={`Vŕtanie studní - detail realizácie ${index + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">U nás nájdete:</h2>
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Bezplatné poradenstvo</h3>
+                <p className="text-gray-600">Jeden z prvých krokov pred vŕtaním studne je obhliadka lokality a jej odborné posúdenie z geologického a hydrogeologického hľadiska.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Hľadanie vody prútikárom</h3>
+                <p className="text-gray-600">Studňu možno teoreticky vyvŕtať kdekoľvek, avšak len skúsený prútikár vie určiť to správne miesto, kde bude vrt najvýdatnejší.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Realizácia studne na kľúč</h3>
+                <p className="text-gray-600">Vyvŕtanie, osadenie rúr, obsyp, založenie čerpadla - až po odovzdanie studne novému majiteľovi</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

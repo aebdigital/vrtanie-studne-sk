@@ -54,7 +54,7 @@ export default function ParallaxHero({
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(68,186,197,0.34),transparent_42%),linear-gradient(118deg,rgba(3,17,29,0.94)_0%,rgba(6,31,48,0.86)_45%,rgba(9,50,71,0.68)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(68,186,197,0.18),transparent_42%),linear-gradient(118deg,rgba(3,17,29,0.82)_0%,rgba(6,31,48,0.65)_45%,rgba(9,50,71,0.45)_100%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:76px_76px] opacity-[0.15]" />
       </div>
       {children}

@@ -12,6 +12,7 @@
 html {
   scroll-behavior: auto;
   background: #eef7fe;
+  overflow-y: scroll;
 }
 
 body {
